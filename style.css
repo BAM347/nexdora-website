@@ -1,0 +1,141 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    color: #222;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    padding: 20px 40px;
+    background-color: #0f172a;
+}
+
+nav h2 {
+    color: white;
+    margin-right: auto;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    padding: 8px 4px;
+    transition: color 0.2s;
+}
+
+nav a:hover {
+    color: #38bdf8;
+}
+
+.hero {
+    text-align: center;
+    padding: 100px 20px;
+    background-color: #f1f5f9;
+}
+
+.hero h1 {
+    font-size: 42px;
+    margin-bottom: 16px;
+}
+
+.hero p {
+    font-size: 18px;
+    color: #555;
+}
+.page-content {
+    max-width: 700px;
+    margin: 60px auto;
+    padding: 0 20px;
+}
+
+.page-content h1 {
+    font-size: 32px;
+    margin-bottom: 20px;
+}
+
+.page-content h2 {
+    font-size: 22px;
+    margin-top: 30px;
+    margin-bottom: 10px;
+}
+
+.page-content p {
+    line-height: 1.6;
+    color: #444;
+}
+.service-item {
+    margin-bottom: 30px;
+    padding-bottom: 30px;
+    border-bottom: 1px solid #ddd;
+}
+
+.service-item h2 {
+    margin-bottom: 8px;
+}
+@media (max-width: 700px) {
+    nav {
+        flex-wrap: wrap;
+        gap: 14px;
+        padding: 16px 20px;
+    }
+
+    nav h2 {
+        margin-right: 0;
+        width: 100%;
+    }
+
+    .hero h1 {
+        font-size: 28px;
+    }
+
+    .hero p {
+        font-size: 16px;
+    }
+
+    .page-content {
+        margin: 30px auto;
+    }
+}
+form {
+    display: flex;
+    flex-direction: column;
+    max-width: 500px;
+    margin-top: 20px;
+}
+
+form label {
+    margin-top: 16px;
+    margin-bottom: 6px;
+    font-weight: bold;
+}
+
+form input,
+form textarea {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-family: inherit;
+    font-size: 15px;
+}
+
+form button {
+    margin-top: 20px;
+    padding: 12px;
+    background-color: #0f172a;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+form button:hover {
+    background-color: #1e293b;
+}
+
+#form-status {
+    margin-top: 16px;
+    font-weight: bold;
+    color: #16a34a;
+}
