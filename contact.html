@@ -17,59 +17,54 @@
     </nav>
 
     <div class="page-content">
-    <h1>Contact Us</h1>
-    <p>Have a question or want to work with us? Send us a message below.</p>
+        <h1>Contact Us</h1>
+        <p>Have a question or want to work with us? Send us a message below.</p>
 
-    <form id="contact-form" https://formspree.io/f/xljdbnqd>
-        <label for="name">Name</label>
-        <input type="text" id="name" name="name" required>
-...
-<input type="email" id="email" name="email" required>
-...
-<textarea id="message" name="message" rows="5" required></textarea>
+        <form id="contact-form" action="https://formspree.io/f/xLjdbnqd" method="POST">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" required>
 
-        <label for="email">Email</label>
-        <input type="email" id="email" required>
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required>
 
-        <label for="message">Message</label>
-        <textarea id="message" rows="5" required></textarea>
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="5" required></textarea>
 
-        <button type="submit">Send Message</button>
-    </form>
+            <button type="submit">Send Message</button>
+        </form>
 
-    <p id="form-status"></p>
-</div>
-            <p>Have a question or want to work with us? Reach out below.</p>
+        <p id="form-status"></p>
 
         <p><strong>Email:</strong> nexdoratech@gmail.com</p>
         <p><strong>Phone:</strong> +234 85877707</p>
     </div>
-<script>
-    const form = document.getElementById('contact-form');
-    const status = document.getElementById('form-status');
 
-    form.addEventListener('submit', async function(event) {
-        event.preventDefault();
+    <script>
+        const form = document.getElementById('contact-form');
+        const status = document.getElementById('form-status');
 
-        const formData = new FormData(form);
+        form.addEventListener('submit', async function(event) {
+            event.preventDefault();
 
-        try {
-            const response = await fetch(form.action, {
-                method: 'POST',
-                body: formData,
-                headers: { 'Accept': 'application/json' }
-            });
+            const formData = new FormData(form);
 
-            if (response.ok) {
-                status.textContent = "Thanks! Your message has been sent.";
-                form.reset();
-            } else {
+            try {
+                const response = await fetch(form.action, {
+                    method: 'POST',
+                    body: formData,
+                    headers: { 'Accept': 'application/json' }
+                });
+
+                if (response.ok) {
+                    status.textContent = "Thanks! Your message has been sent.";
+                    form.reset();
+                } else {
+                    status.textContent = "Something went wrong. Please try again.";
+                }
+            } catch (error) {
                 status.textContent = "Something went wrong. Please try again.";
             }
-        } catch (error) {
-            status.textContent = "Something went wrong. Please try again.";
-        }
-    });
-</script>
+        });
+    </script>
 </body>
 </html>
